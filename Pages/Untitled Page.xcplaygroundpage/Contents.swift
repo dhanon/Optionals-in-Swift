@@ -1,6 +1,7 @@
 import UIKit
-// optionals
-// Declaring an optional Integer
+
+ //Swift Optionals
+ //Declaring an optional Integer
 var num: Int?
 // Assigning a value to the optional
 num = 35
@@ -10,7 +11,7 @@ if let a = num {
 } else{
     print("Value is unknown")
 }
-
+//
 // Optionals with nil
 var number: Int?
 // Setting variable to nil
@@ -23,7 +24,7 @@ if number != nil {
 }
 
 
-//Forced Unwrapping
+////Forced Unwrapping
 var num2: Int?
 num2 = 55
 
@@ -32,7 +33,6 @@ let value = num2!
 print("Forced Unwrapping \(value)")
 
 //Implicitly Unwrapping Optional
-
 var myString: String!
 myString = "Hello World"
 
@@ -41,8 +41,8 @@ if myString != nil {
 } else {
     print("myString has nil value")
 }
-//Optional Binding
 
+//Optional Binding
 // Declaring an optional Integer
 var number2: Int?
 
@@ -57,11 +57,35 @@ if let x = number2 {
 }
 
 //Nil-Coalescing Operator(??)
-
 func getSalary() -> Int? {
-    
+
     return nil
 }
 
-let salary = getSalary() ?? 15000
+let salary = getSalary() ?? 50000
 print("Salary: \(salary)")
+
+//Optionals Unwrapping
+
+var ages: [Int] = [23, 21, 19, 27, 29, 33]
+ages.sort()
+
+//if let
+if let oldestAge = ages.last {
+    print("The oldest age is \(oldestAge)")
+} else{
+    print("Not Found")
+}
+
+//Nil-Coalescing Operator(??)
+let olestAge = ages.last ?? 999
+
+//Guard Statement
+func oldestAge(){
+    guard let oldestAge = ages.last else {return}
+}
+print("\(olestAge) is the oldest age.")
+oldestAge()
+
+//Force Unwrapping
+let oldestAge2 = ages.last!
